@@ -68,7 +68,9 @@ RUN    curl -fSL 'https://extdist.wmflabs.org/dist/extensions/AbuseFilter-REL1_3
 RUN { \
         echo '{'; \
         echo '    "require": {'; \
-        echo '        "mediawiki/maps": "^7"'; \
+        echo '        "mediawiki/maps": "^7",'; \
+        echo '        "pear/mail": "1.4.1",'; \
+        echo '        "pear/net_smtp": "1.8.0"'; \
         echo '    },'; \
         echo '    "extra": {'; \
         echo '        "merge-plugin": {'; \
