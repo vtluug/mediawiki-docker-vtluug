@@ -10,8 +10,7 @@ RUN apk update && apk add \
     # Required for SyntaxHighlighting
     python3 \
     # Extensions
-    unzip \
-    && rm -r /var/lib/apt/lists/*
+    unzip
 
 # Install the PHP extensions we need
 RUN docker-php-ext-install mbstring mysqli opcache intl
