@@ -12,7 +12,8 @@ RUN apk update && apk add \
     python3 \
     # Extensions
     unzip \
-    autoconf
+    autoconf \
+    gcc
 
 # Install the PHP extensions we need
 RUN docker-php-ext-install mysqli intl
