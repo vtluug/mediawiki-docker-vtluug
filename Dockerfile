@@ -1,4 +1,4 @@
-FROM php:zts-alpine3.24
+FROM php:8.4-zts-alpine3.24
 
 WORKDIR /var/www/html/w
 
