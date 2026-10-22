@@ -3,7 +3,7 @@ FROM php:zts-alpine3.24
 WORKDIR /var/www/html/w
 
 # System Dependencies.
-RUN apt update && apt install -y \
+RUN apk update && apk add -y \
     git \
     imagemagick \
     libicu-dev \
