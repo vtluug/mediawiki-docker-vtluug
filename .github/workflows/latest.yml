@@ -1,0 +1,19 @@
+name: Build and push container image with latest tag
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v7
+    - name: Build and push Docker image to GitHub Package Registry
+      uses: elgohr/Publish-Docker-Github-Action@v5
+      with:
+        name: vtluug/mediawiki-vtluug
+        username: ${{ github.repository_owner }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        registry: ghcr.io
+        tags: "latest"
