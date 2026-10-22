@@ -12,8 +12,6 @@ RUN apk update && apk add \
     python3 \
     # Extensions
     unzip \
-    autoconf \
-    gcc \
     php-pecl-apcu
 
 # Install the PHP extensions we need
@@ -50,18 +48,18 @@ RUN    curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VER
     && rm mediawiki.tar.gz \
     && curl https://getcomposer.org/download/1.10.7/composer.phar -o composer.phar
 
-# Manually install extensions & skins
-RUN    curl -fSL 'https://extdist.wmflabs.org/dist/extensions/AbuseFilter-REL1_31-7b66a2c.tar.gz' | tar -xz -C ./extensions \
-    && curl -fSL 'https://extdist.wmflabs.org/dist/extensions/AntiSpoof-REL1_31-48ed1f8.tar.gz' | tar -xz -C ./extensions \
-    && curl -fSL 'https://extdist.wmflabs.org/dist/extensions/Capiunto-REL1_31-cbcd67b.tar.gz' | tar -xz -C ./extensions \
-    && curl -fSL 'https://extdist.wmflabs.org/dist/extensions/GeoData-REL1_31-96cda6b.tar.gz' | tar -xz -C ./extensions \
-    && curl -fSL 'https://extdist.wmflabs.org/dist/extensions/MobileFrontend-REL1_31-db6d3d1.tar.gz' | tar -xz -C ./extensions \
-    && curl -fSL 'https://extdist.wmflabs.org/dist/extensions/OpenIDConnect-REL1_31-baea47f.tar.gz' | tar -xz -C ./extensions \
-    && curl -fSL 'https://extdist.wmflabs.org/dist/extensions/PluggableAuth-REL1_31-300ac44.tar.gz' | tar -xz -C ./extensions \
-    && curl -fSL 'https://extdist.wmflabs.org/dist/extensions/Scribunto-REL1_31-106fbf4.tar.gz' | tar -xz -C ./extensions \
-    && curl -fSL 'https://extdist.wmflabs.org/dist/extensions/UserMerge-REL1_31-86f0e02.tar.gz' | tar -xz -C ./extensions \
-    # Skins
-    && curl -fSL 'https://extdist.wmflabs.org/dist/skins/MinervaNeue-REL1_31-2e70e79.tar.gz' | tar -xz -C ./skins
+# Install extensions & skins
+#RUN    curl -fSL 'https://extdist.wmflabs.org/dist/extensions/AbuseFilter-REL1_31-7b66a2c.tar.gz' | tar -xz -C ./extensions \
+#    && curl -fSL 'https://extdist.wmflabs.org/dist/extensions/AntiSpoof-REL1_31-48ed1f8.tar.gz' | tar -xz -C ./extensions \
+#    && curl -fSL 'https://extdist.wmflabs.org/dist/extensions/Capiunto-REL1_31-cbcd67b.tar.gz' | tar -xz -C ./extensions \
+#    && curl -fSL 'https://extdist.wmflabs.org/dist/extensions/GeoData-REL1_31-96cda6b.tar.gz' | tar -xz -C ./extensions \
+#    && curl -fSL 'https://extdist.wmflabs.org/dist/extensions/MobileFrontend-REL1_31-db6d3d1.tar.gz' | tar -xz -C ./extensions \
+#    && curl -fSL 'https://extdist.wmflabs.org/dist/extensions/OpenIDConnect-REL1_31-baea47f.tar.gz' | tar -xz -C ./extensions \
+#    && curl -fSL 'https://extdist.wmflabs.org/dist/extensions/PluggableAuth-REL1_31-300ac44.tar.gz' | tar -xz -C ./extensions \
+#    && curl -fSL 'https://extdist.wmflabs.org/dist/extensions/Scribunto-REL1_31-106fbf4.tar.gz' | tar -xz -C ./extensions \
+#    && curl -fSL 'https://extdist.wmflabs.org/dist/extensions/UserMerge-REL1_31-86f0e02.tar.gz' | tar -xz -C ./extensions \
+#    # Skins
+#    && curl -fSL 'https://extdist.wmflabs.org/dist/skins/MinervaNeue-REL1_31-2e70e79.tar.gz' | tar -xz -C ./skins
 
 # Built-in Extensions
 RUN { \
