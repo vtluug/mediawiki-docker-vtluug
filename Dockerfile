@@ -14,7 +14,7 @@ RUN apk update && apk add \
     unzip
 
 # Install the PHP extensions we need
-RUN docker-php-ext-install mysqli opcache intl
+RUN docker-php-ext-install mysqli intl
 
 # Install the default object cache.
 RUN    pecl channel-update pecl.php.net \
