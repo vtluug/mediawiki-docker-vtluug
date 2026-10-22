@@ -6,7 +6,7 @@ WORKDIR /var/www/html/w
 RUN apk update && apk add \
     git \
     imagemagick \
-    libicu-dev \
+    icu-dev \
     # Required for SyntaxHighlighting
     python3 \
     # Extensions
