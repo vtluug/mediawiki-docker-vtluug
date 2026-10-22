@@ -13,15 +13,11 @@ RUN apk update && apk add \
     # Extensions
     unzip \
     autoconf \
-    gcc
+    gcc \
+    php-pecl-apcu
 
 # Install the PHP extensions we need
 RUN docker-php-ext-install mysqli intl
-
-# Install the default object cache.
-RUN    pecl channel-update pecl.php.net \
-    && pecl install apcu \
-    && docker-php-ext-enable apcu
 
 # PHP.ini settings
 ## see https://secure.php.net/manual/en/opcache.installation.php
