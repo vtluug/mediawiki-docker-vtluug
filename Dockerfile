@@ -1,4 +1,4 @@
-FROM php:7.2-apache
+FROM php:zts-alpine3.24
 
 WORKDIR /var/www/html/w
 
