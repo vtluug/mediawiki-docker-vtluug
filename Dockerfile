@@ -11,7 +11,8 @@ RUN apk update && apk add \
     # Required for SyntaxHighlighting
     python3 \
     # Extensions
-    unzip
+    unzip \
+    autoconf
 
 # Install the PHP extensions we need
 RUN docker-php-ext-install mysqli intl
