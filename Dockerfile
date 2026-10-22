@@ -7,6 +7,7 @@ RUN apk update && apk add \
     git \
     imagemagick \
     icu-dev \
+    oniguruma-dev \
     # Required for SyntaxHighlighting
     python3 \
     # Extensions
@@ -39,10 +40,10 @@ RUN    mkdir -p /var/www/data \
     && chown -R www-data:www-data /var/www/data
 
 # Version
-ENV MEDIAWIKI_MAJOR_VERSION 1.31
-ENV MEDIAWIKI_BRANCH REL1_31
-ENV MEDIAWIKI_VERSION 1.31.1
-ENV MEDIAWIKI_SHA512 ee49649cc37d0a7d45a7c6d90c822c2a595df290be2b5bf085affbec3318768700a458a6e5b5b7e437651400b9641424429d6d304f870c22ec63fae86ffc5152
+ENV MEDIAWIKI_MAJOR_VERSION=1.31
+ENV MEDIAWIKI_BRANCH=REL1_31
+ENV MEDIAWIKI_VERSION=1.31.1
+ENV MEDIAWIKI_SHA512=ee49649cc37d0a7d45a7c6d90c822c2a595df290be2b5bf085affbec3318768700a458a6e5b5b7e437651400b9641424429d6d304f870c22ec63fae86ffc5152
 
 # MediaWiki setup
 RUN    curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz" -o mediawiki.tar.gz \
