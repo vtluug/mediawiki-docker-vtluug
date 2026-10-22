@@ -3,7 +3,7 @@ FROM php:zts-alpine3.24
 WORKDIR /var/www/html/w
 
 # System Dependencies.
-RUN apk update && apk add -y \
+RUN apk update && apk add \
     git \
     imagemagick \
     libicu-dev \
