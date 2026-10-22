@@ -2,7 +2,7 @@ name: Build and push container image with latest tag
 on:
   push:
     branches:
-      - 'master'
+      - '*'
 
 jobs:
   build:
@@ -16,4 +16,3 @@ jobs:
         username: ${{ github.repository_owner }}
         password: ${{ secrets.GITHUB_TOKEN }}
         registry: ghcr.io
-        tags: "latest"
