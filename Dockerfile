@@ -46,7 +46,7 @@ RUN    curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VER
     && echo "${MEDIAWIKI_SHA512} *mediawiki.tar.gz" | sha512sum -c - \
     && tar -xz --strip-components=1 -f mediawiki.tar.gz \
     && rm mediawiki.tar.gz \
-    && curl https://getcomposer.org/download/1.10.7/composer.phar -o composer.phar
+    && curl https://getcomposer.org/download/2.10.3/composer.phar -o composer.phar
 
 # Install extensions & skins
 #RUN    curl -fSL 'https://extdist.wmflabs.org/dist/extensions/AbuseFilter-REL1_31-7b66a2c.tar.gz' | tar -xz -C ./extensions \
