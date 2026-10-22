@@ -11,7 +11,7 @@ RUN apk update && apk add \
     python3 \
     # Extensions
     unzip \
-    --no-install-recommends && rm -r /var/lib/apt/lists/*
+    && rm -r /var/lib/apt/lists/*
 
 # Install the PHP extensions we need
 RUN docker-php-ext-install mbstring mysqli opcache intl
