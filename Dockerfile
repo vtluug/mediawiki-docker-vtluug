@@ -10,8 +10,8 @@ RUN cd /var/www/html/extensions \
     && git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/AntiSpoof AntiSpoof \
     && cd AntiSpoof \
     && composer install --no-dev
-    && cd ..
+
+RUN cd /var/www/html/extensions \
     && git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/Interwiki Interwiki \
     && cd Interwiki \
     && composer install --no-dev
-    && cd ..
