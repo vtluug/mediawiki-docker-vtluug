@@ -9,6 +9,6 @@ cd /var/www/html/extensions
 git clone "$REPO" --branch "$BRANCH" --depth 1 "$NAME"
 cd "$NAME"
 
-if [[ -n "${NO_COMPOSER}" ]]; then
+if [[ ! -n "${NO_COMPOSER}" ]]; then
     composer install --no-dev
 fi
