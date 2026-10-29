@@ -6,34 +6,16 @@ RUN apt install unzip curl git -y
 
 COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
 
-WORKDIR /var/www/html/extensions
+COPY install-extension .
+RUN chmod +x install-extension
 
-RUN git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/AntiSpoof \
-    && cd AntiSpoof \
-    && composer install --no-dev
+RUN REPO="https://github.com/ProfessionalWiki/Maps" BRANCH="13.1.x" ./install-extension AntiSpoof
 
-RUN git clone https://github.com/ProfessionalWiki/Maps \
-    && cd Maps \
-    && composer install --no-dev
+RUN ./install-extension AntiSpoof
+RUN ./install-extension MobileFrontend
+RUN ./install-extension GeoData
+RUN ./install-extension PluggableAuth
+RUN ./install-extension OpenIDConnect
+RUN ./install-extension UserMerge
 
-RUN git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/MobileFrontend \
-    && cd MobileFrontend \
-    && composer install --no-dev
-
-RUN git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/GeoData \
-    && cd GeoData \
-    && composer install --no-dev
-
-RUN git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/PluggableAuth \
-    && cd PluggableAuth \
-    && composer install --no-dev
-
-RUN git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/OpenIDConnect \
-    && cd OpenIDConnect \
-    && composer install --no-dev
-
-RUN git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/UserMerge \
-    && cd UserMerge \
-    && composer install --no-dev
-
-RUN git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/Renameuser
+RUN NO_COMPOSER=1 ./install-extension Renameuser

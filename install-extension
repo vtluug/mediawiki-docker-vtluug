@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+NAME=$1
+BRANCH=${BRANCH:-REL1_146}
+REPO=${REPO:-https://gerrit.wikimedia.org/r/mediawiki/extensions/$NAME}
+
+cd /var/www/html/extensions
+git clone "$REPO" --branch "$BRANCH" --depth 1 "$NAME"
+cd "$NAME"
+
+if [[ -z "$NO_COMPOSER" ]]; then
+    composer install --no-dev
+fi
