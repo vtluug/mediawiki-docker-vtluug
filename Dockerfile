@@ -35,3 +35,5 @@ RUN git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/OpenIDConnect 
 RUN git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/UserMerge \
     && cd UserMerge \
     && composer install --no-dev
+
+RUN git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/Renameuser
