@@ -32,6 +32,6 @@ RUN git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/OpenIDConnect 
     && cd OpenIDConnect \
     && composer install --no-dev
 
-RUN git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/Usermerge \
-    && cd Usermerge \
+RUN git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/UserMerge \
+    && cd UserMerge \
     && composer install --no-dev
