@@ -9,7 +9,7 @@ COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
 COPY install-extension .
 RUN chmod +x install-extension
 
-RUN REPO="https://github.com/ProfessionalWiki/Maps" BRANCH="13.1.x" ./install-extension AntiSpoof
+RUN REPO="https://github.com/ProfessionalWiki/Maps" BRANCH="13.1.x" ./install-extension Maps
 
 RUN ./install-extension AntiSpoof
 RUN ./install-extension MobileFrontend
