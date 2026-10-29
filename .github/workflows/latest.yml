@@ -16,3 +16,4 @@ jobs:
         username: ${{ github.repository_owner }}
         password: ${{ secrets.GITHUB_TOKEN }}
         registry: ghcr.io
+        tags: ${{ github.sha }}
