@@ -1,5 +1,7 @@
 FROM mediawiki:latest
 
+WORKDIR /var/www/html
+
 RUN apt update
 
 RUN apt install unzip curl git -y
@@ -11,5 +13,5 @@ RUN cd /var/www/html/extensions \
     && cd AntiSpoof \
     && composer install --no-dev
 
-RUN composer require --no-update mediawiki/maps:~14.0
+RUN COMPOSER=composer.local.json composer require --no-update mediawiki/maps:~14.0
 RUN composer update mediawiki/maps --no-dev -o
