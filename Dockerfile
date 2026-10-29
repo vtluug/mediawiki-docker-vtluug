@@ -20,8 +20,8 @@ RUN git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/MobileFrontend
     && cd MobileFrontend \
     && composer install --no-dev
 
-RUN git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/Geodata \
-    && cd Geodata \
+RUN git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/GeoData \
+    && cd GeoData \
     && composer install --no-dev
 
 RUN git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/PluggableAuth \
