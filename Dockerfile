@@ -10,7 +10,7 @@ COPY install-extension .
 RUN chmod +x install-extension
 
 RUN REPO="https://github.com/ProfessionalWiki/Maps" \
-    BRANCH="6315213691c7bdce6ec1c8a27ab2a799cbdfa0d4" \
+    BRANCH="master" \
     ./install-extension Maps
 
 RUN ./install-extension AntiSpoof
