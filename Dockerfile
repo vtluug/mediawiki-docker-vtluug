@@ -1,6 +1,9 @@
 FROM mediawiki:1.35.7
 ENV BRANCH="REL1_35"
 
+# skip installing extensions for these intermediate versions
+ENV NO_INSTALL=1
+
 RUN apt update
 
 RUN apt install unzip curl git -y

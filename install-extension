@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
+if [[ -n "${NO_INSTALL}" ]]; then
+    exit
+fi
+
 NAME=$1
 BRANCH=${BRANCH:-REL1_46}
 REPO=${REPO:-https://gerrit.wikimedia.org/r/mediawiki/extensions/$NAME}
