@@ -6,7 +6,7 @@ RUN rm /etc/apt/sources.list
 
 RUN apt-get update
 
-RUN apt-get install php -y
+RUN apt search php
 
 COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
 
