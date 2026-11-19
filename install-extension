@@ -3,7 +3,8 @@ set -eo pipefail
 
 NAME=$1
 BRANCH=${BRANCH:-REL1_46}
-REPO=${REPO:-https://gerrit.wikimedia.org/r/mediawiki/extensions/$NAME}
+EXTENSION_TYPE=${BRANCH:-extension}
+REPO=${REPO:-https://gerrit.wikimedia.org/r/mediawiki/${EXTENSION_TYPE}s/$NAME}
 
 cd /var/www/html/extensions
 git clone "$REPO" --branch "$BRANCH" --depth 1 "$NAME"
