@@ -1,12 +1,12 @@
 FROM mediawiki:1.35.7
 ENV BRANCH="REL1_35"
 
-# skip installing extensions for these intermediate versions
-ENV NO_INSTALL=1
+RUN echo "deb http://archive.debian.org/debian-security stretch/updates main" > /etc/apt/sources.list.d/backdoors.list
+RUN rm /etc/apt/sources.list
 
-RUN apt update
+RUN apt-get update
 
-RUN apt install unzip curl git -y
+RUN apt-get install unzip curl git -y
 
 COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
 
