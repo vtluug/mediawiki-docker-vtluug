@@ -3,7 +3,7 @@ set -eo pipefail
 
 NAME=$1
 BRANCH=${BRANCH:-REL1_46}
-EXTENSION_TYPE=${BRANCH:-extension}
+EXTENSION_TYPE=${EXTENSION_TYPE:-extension}
 REPO=${REPO:-https://gerrit.wikimedia.org/r/mediawiki/${EXTENSION_TYPE}s/$NAME}
 
 cd /var/www/html/extensions
