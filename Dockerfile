@@ -1,7 +1,7 @@
 FROM mediawiki:1.35.13-fpm-alpine
 
 RUN apk update
-RUN apk install unzip curl git -y
+RUN apk add unzip curl git -y
 
 COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
 
