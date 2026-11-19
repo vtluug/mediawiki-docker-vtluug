@@ -2,7 +2,7 @@
 set -eo pipefail
 
 NAME=$1
-BRANCH=${BRANCH:-REL1_46}
+BRANCH=${BRANCH:-REL1_35}
 REPO=${REPO:-https://gerrit.wikimedia.org/r/mediawiki/extensions/$NAME}
 
 cd /var/www/html/extensions

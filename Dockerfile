@@ -1,4 +1,4 @@
-FROM mediawiki:1.46.2
+FROM mediawiki:1.35.13
 
 RUN apt update
 
