@@ -1,12 +1,15 @@
 FROM mediawiki:1.35.7
 ENV BRANCH="REL1_35"
 
+RUN curl -sSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg
+RUN echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
+
 RUN echo "deb http://archive.debian.org/debian-security stretch/updates main" > /etc/apt/sources.list.d/backdoors.list
 RUN rm /etc/apt/sources.list
 
 RUN apt-get update
 
-RUN apt search php
+RUN apt install php8.4 -y
 
 COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
 
