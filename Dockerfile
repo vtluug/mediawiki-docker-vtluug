@@ -1,5 +1,7 @@
 FROM mediawiki:1.46.2
 
+WORKDIR /var/www/html/w
+
 RUN apt update
 
 RUN apt install unzip curl git -y
