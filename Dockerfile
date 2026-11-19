@@ -6,7 +6,7 @@ RUN rm /etc/apt/sources.list
 
 RUN apt-get update
 
-RUN apt-get install unzip curl git -y
+RUN apt-get install curl git -y
 
 COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
 
