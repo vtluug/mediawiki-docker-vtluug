@@ -15,8 +15,6 @@ COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
 COPY install-extension .
 RUN chmod +x install-extension
 
-RUN EXTENSION_TYPE=skin ./install-extension Vector
-
 RUN REPO="https://github.com/ProfessionalWiki/Maps" \
     BRANCH="master" \
     ./install-extension Maps
