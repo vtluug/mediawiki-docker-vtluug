@@ -1,5 +1,9 @@
 FROM mediawiki:1.46.2
 
+RUN mkdir /tmp/w
+RUN mv * /tmp/w
+RUN mv /tmp/w .
+
 WORKDIR /var/www/html/w
 
 RUN apt update
