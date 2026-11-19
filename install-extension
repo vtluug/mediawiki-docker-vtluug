@@ -6,7 +6,7 @@ BRANCH=${BRANCH:-REL1_46}
 EXTENSION_TYPE=${EXTENSION_TYPE:-extension}
 REPO=${REPO:-https://gerrit.wikimedia.org/r/mediawiki/${EXTENSION_TYPE}s/$NAME}
 
-cd /var/www/html/extensions
+cd "/var/www/html/w/${EXTENSION_TYPE}s"
 git clone "$REPO" --branch "$BRANCH" --depth 1 "$NAME"
 cd "$NAME"
 
