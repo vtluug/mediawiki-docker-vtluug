@@ -1,6 +1,13 @@
 FROM mediawiki:1.35.7
 ENV BRANCH="REL1_35"
 
+RUN echo "deb http://archive.debian.org/debian-security stretch/updates main" > /etc/apt/sources.list.d/backdoors.list
+RUN rm /etc/apt/sources.list
+
+RUN apt-get update
+
+RUN apt-get install php -y
+
 COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
 
 COPY install-extension .
