@@ -1,8 +1,8 @@
 FROM mediawiki:1.35.13
 
-RUN apt update
+RUN apt-get update
 
-RUN apt install unzip curl git -y
+RUN apt-get install unzip curl git -y
 
 COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
 
